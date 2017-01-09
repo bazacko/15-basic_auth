@@ -29,6 +29,11 @@ app.use(jokeRouter);
 app.use(vidRouter);
 app.use(errors);
 
+app.get('/', (req, res, next) => {
+  res.send('Welcome to kauth.');
+  next();
+});
+
 app.listen(PORT, () => {
   debug(`Server up on ${PORT}`);
 });
